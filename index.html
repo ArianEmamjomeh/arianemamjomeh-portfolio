@@ -6,6 +6,7 @@
     <title>Arian Emamjomeh - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Great+Vibes&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -52,17 +53,17 @@
                     <a href="mailto:arianemamjomeh@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://linkedin.com" class="social-link">
+                    <a href="https://www.linkedin.com/in/arian-emamjomeh" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com" class="social-link">
+                    <a href="https://github.com/SparkyHorizon" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="hero-placeholder">
-                    <i class="fas fa-user-circle"></i>
+                <div class="hero-image-container">
+                    <img src="profile.jpg" alt="Arian Emamjomeh" class="hero-profile-img">
                 </div>
             </div>
         </div>
@@ -73,18 +74,26 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a dedicated Computer Science student at the University of Waterloo with a passion for 
-                        technology and innovation. My journey combines academic excellence with hands-on experience 
-                        in software development, research, and leadership.
-                    </p>
-                    <p>
-                        I've had the privilege of conducting research at Harvard Medical School, leading student 
-                        organizations, and building full-stack applications that solve real-world problems. 
-                        My diverse background spans from medical research to architectural consulting, giving me 
-                        a unique perspective on how technology can impact various industries.
-                    </p>
+                <div class="about-education">
+                    <h3>Education</h3>
+                    <div class="education-card">
+                        <div class="education-header">
+                            <div class="education-title-with-logo">
+                                <img src="waterloo-logo.png" alt="University of Waterloo Logo" class="university-logo">
+                                <h4>University of Waterloo</h4>
+                            </div>
+                            <span class="education-date">Expected April 2030</span>
+                        </div>
+                        <p class="education-degree">Bachelor's of Computer Science</p>
+                        <p class="education-location">Waterloo, ON</p>
+                        <div class="education-awards">
+                            <h5>Awards & Scholarships</h5>
+                            <ul>
+                                <li>President's Scholarship of Distinction</li>
+                                <li>Paul M. Koch Entrance Scholarship</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-skills">
                     <h3>Skills & Technologies</h3>
@@ -97,6 +106,8 @@
                                 <span class="skill-tag">TypeScript</span>
                                 <span class="skill-tag">HTML/CSS</span>
                                 <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">Expo</span>
                             </div>
                         </div>
                         <div class="skill-category">
@@ -109,44 +120,103 @@
                                 <span class="skill-tag">Supabase</span>
                             </div>
                         </div>
-                        <div class="skill-category">
-                            <h4>Mobile</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">React Native</span>
-                                <span class="skill-tag">Expo</span>
-                                <span class="skill-tag">TypeScript</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Languages</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">English</span>
-                                <span class="skill-tag">French</span>
-                                <span class="skill-tag">Farsi</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="education">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>University of Waterloo</h3>
-                    <span class="education-date">Expected April 2030</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Medical Simulation Platform</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/SparkyHorizon" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://imitate-medical-sim.vercel.app/" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A comprehensive medical education platform enabling patient simulation and diagnostic assessment for medical students and professionals.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">NextJS</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Gemini API</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">SQLite</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Developed a medical education platform using NextJS, enabling patient simulation and diagnostic assessment</li>
+                        <li>Built a preload utility to ingest and pull from 150+ patients randomly using SQLite</li>
+                        <li>Engineered a FastAPI backend with endpoints for data operations and user authentication using Supabase</li>
+                        <li>Used Gemini API to simulate patients, process chat context/final diagnoses to compute scores, and deliver feedback</li>
+                    </ul>
                 </div>
-                <p class="education-degree">Bachelor's of Computer Science</p>
-                <p class="education-location">Waterloo, ON</p>
-                <div class="education-awards">
-                    <h4>Awards & Scholarships</h4>
-                    <ul>
-                        <li>President's Scholarship of Distinction</li>
-                        <li>Paul M. Koch Entrance Scholarship</li>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>FitTrack - Workout Tracker</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A full-stack fitness tracker that allows users to search exercises, add custom sets, and track progress interactively.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">WGER API</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Developed a full-stack fitness tracker that allows users to search exercises via the WGER API</li>
+                        <li>Engineered a dynamic frontend with JavaScript and HTML/CSS to group exercises and manage sets</li>
+                        <li>Implemented a Flask backend with a SQLite database to store user workouts and real-time input data</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>WatsApp - Course Community App</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/SparkyHorizon" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://watsapp.ca" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A mobile-first study hub where Waterloo students join course chats, share attachments, and manage study groups.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Expo</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">TypeScript</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Built a mobile-first study hub where Waterloo students join course chats and share attachments</li>
+                        <li>Designed polished UX with profile customization, Instagram links, and threaded replies</li>
+                        <li>Implemented secure auth and data flows with Supabase and wired Expo push-ready architecture</li>
                     </ul>
                 </div>
             </div>
@@ -222,102 +292,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Medical Simulation Platform</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A comprehensive medical education platform enabling patient simulation and diagnostic assessment for medical students and professionals.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">NextJS</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Gemini API</span>
-                        <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">SQLite</span>
-                    </div>
-                    <ul class="project-features">
-                        <li>Developed a medical education platform using NextJS, enabling patient simulation and diagnostic assessment</li>
-                        <li>Built a preload utility to ingest and pull from 150+ patients randomly using SQLite</li>
-                        <li>Engineered a FastAPI backend with endpoints for data operations and user authentication using Supabase</li>
-                        <li>Used Gemini API to simulate patients, process chat context/final diagnoses to compute scores, and deliver feedback</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>FitTrack - Workout Tracker</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A full-stack fitness tracker that allows users to search exercises, add custom sets, and track progress interactively.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">SQLite</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">WGER API</span>
-                    </div>
-                    <ul class="project-features">
-                        <li>Developed a full-stack fitness tracker that allows users to search exercises via the WGER API</li>
-                        <li>Engineered a dynamic frontend with JavaScript and HTML/CSS to group exercises and manage sets</li>
-                        <li>Implemented a Flask backend with a SQLite database to store user workouts and real-time input data</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>WatsApp - Course Community App</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A mobile-first study hub where Waterloo students join course chats, share attachments, and manage study groups.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Expo</span>
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">TypeScript</span>
-                    </div>
-                    <ul class="project-features">
-                        <li>Built a mobile-first study hub where Waterloo students join course chats and share attachments</li>
-                        <li>Designed polished UX with profile customization, Instagram links, and threaded replies</li>
-                        <li>Implemented secure auth and data flows with Supabase and wired Expo push-ready architecture</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Extracurriculars Section -->
     <section class="extracurriculars">
@@ -371,11 +345,11 @@
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
-                            <a href="https://linkedin.com">LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/arian-emamjomeh">LinkedIn Profile</a>
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-github"></i>
-                            <a href="https://github.com">GitHub Profile</a>
+                            <a href="https://github.com/SparkyHorizon">GitHub Profile</a>
                         </div>
                     </div>
                 </div>
@@ -407,10 +381,10 @@
                     <a href="mailto:arianemamjomeh@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://linkedin.com" class="social-link">
+                    <a href="https://www.linkedin.com/in/arian-emamjomeh" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com" class="social-link">
+                    <a href="https://github.com/SparkyHorizon" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
