@@ -208,6 +208,32 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-resume {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-resume:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    color: white;
+}
+
+.btn-resume i {
+    font-size: 0.9rem;
+}
+
 .hero-social {
     display: flex;
     gap: 1rem;
@@ -948,6 +974,11 @@ body {
         font-size: 0.95rem;
     }
 
+    .btn-resume {
+        max-width: 250px;
+        justify-content: center;
+    }
+
     .hero-social {
         justify-content: center;
         margin-bottom: 1rem;
@@ -1026,6 +1057,12 @@ body {
         width: 100%;
         max-width: 220px;
         text-align: center;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-resume {
+        max-width: 220px;
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
     }
