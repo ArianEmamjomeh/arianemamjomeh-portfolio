@@ -905,15 +905,52 @@ body {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
     }
 
     .hero-image-container {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        width: 250px;
+        height: 250px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-social {
+        justify-content: center;
+        margin-bottom: 1rem;
     }
 
     .about-content {
@@ -949,22 +986,66 @@ body {
         align-items: flex-start;
         gap: 0.5rem;
     }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.6rem;
     }
 
     .btn {
         width: 100%;
-        max-width: 200px;
+        max-width: 220px;
         text-align: center;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-image-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-social {
+        gap: 0.8rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-link i {
+        font-size: 1.1rem;
     }
 
     .projects-grid {
@@ -973,6 +1054,22 @@ body {
 
     .extracurriculars-grid {
         grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 0.8rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .nav-logo a {
+        font-size: 1.8rem;
     }
 }
 
