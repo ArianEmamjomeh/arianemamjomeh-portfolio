@@ -958,40 +958,33 @@ body {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
-        padding: 4rem 1rem 2rem;
-        order: 2;
-    }
-
-    .hero-image {
-        order: 1;
-        margin-bottom: 1rem;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
     }
 
     .hero-image-container {
-        margin-top: 0;
-        width: 200px;
-        height: 200px;
+        margin-top: 1rem;
+        width: 250px;
+        height: 250px;
         margin-left: auto;
         margin-right: auto;
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.2;
-        margin-bottom: 0.8rem;
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
     }
 
     .hero-description {
         font-size: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         padding: 0 1rem;
-        line-height: 1.6;
     }
 
     .hero-buttons {
@@ -1067,34 +1060,24 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-container {
-        padding: 3rem 0.8rem 1.5rem;
-        gap: 1.5rem;
-    }
-
     .hero-title {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 0.6rem;
+        font-size: 1.8rem;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
         font-size: 1.1rem;
-        margin-bottom: 0.8rem;
     }
 
     .hero-description {
         font-size: 0.95rem;
         padding: 0 0.5rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
         gap: 0.6rem;
-        margin-bottom: 1.5rem;
     }
 
     .btn {
@@ -1112,8 +1095,8 @@ body {
     }
 
     .hero-image-container {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
     }
 
     .hero-social {
@@ -1149,13 +1132,8 @@ body {
         font-size: 1.8rem;
     }
 
-    .nav-logo-text {
+    .nav-logo a {
         font-size: 1.8rem;
-    }
-
-    .nav-logo-img {
-        height: 32px;
-        width: auto;
     }
 }
 
