@@ -979,6 +979,7 @@ body {
     .hero-title {
         font-size: 2.5rem;
         line-height: 1.2;
+        margin-top: 1.5rem;
         margin-bottom: 0.8rem;
     }
 
@@ -1075,6 +1076,7 @@ body {
     .hero-title {
         font-size: 2rem;
         line-height: 1.2;
+        margin-top: 1.2rem;
         margin-bottom: 0.6rem;
     }
 
