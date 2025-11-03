@@ -42,12 +42,6 @@ window.addEventListener('scroll', () => {
 });
 
 let vantaEffect;
-let lanternCursor;
-let lanternTarget = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-let lanternPosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-let lanternAnimating = false;
-let lanternSpritePromise;
-const interactiveHoverSelector = 'a, button, input, textarea, select, [role="button"], .btn, .nav-link, .social-chip, .project-link, .project-card, .contact-item, .timeline-item';
 
 function initFogBackground() {
     const fogElement = document.getElementById('vanta-bg');
@@ -71,171 +65,6 @@ function initFogBackground() {
         zoom: 1.1
     });
 }
-
-function initLanternCursor() {
-    if (lanternCursor || !window.matchMedia('(pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-    }
-
-    lanternCursor = document.createElement('div');
-    lanternCursor.className = 'cursor-lantern';
-    lanternCursor.innerHTML = '<span class="lantern-body"><span class="lantern-glow"></span><span class="lantern-sprite"></span></span>';
-    document.body.appendChild(lanternCursor);
-    document.body.classList.add('lantern-enabled');
-
-    const spriteElement = lanternCursor.querySelector('.lantern-sprite');
-    prepareLanternSprite(spriteElement);
-
-    const halfWidth = 28;
-    const halfHeight = 44;
-    const snap = 2;
-
-    const applyTransform = () => {
-        const translateX = Math.round((lanternPosition.x - halfWidth) / snap) * snap;
-        const translateY = Math.round((lanternPosition.y - halfHeight) / snap) * snap;
-        const rotation = Math.max(Math.min((lanternTarget.x - lanternPosition.x) * 0.025, 4), -4);
-        lanternCursor.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${rotation}deg)`;
-    };
-
-    applyTransform();
-
-    const animateLantern = () => {
-        if (!lanternAnimating) {
-            return;
-        }
-
-        const smoothing = 0.2;
-        lanternPosition.x += (lanternTarget.x - lanternPosition.x) * smoothing;
-        lanternPosition.y += (lanternTarget.y - lanternPosition.y) * smoothing;
-
-        applyTransform();
-
-        requestAnimationFrame(animateLantern);
-    };
-
-    const hideLantern = () => {
-        lanternCursor.style.opacity = '0';
-        lanternAnimating = false;
-        lanternCursor.removeAttribute('data-animating');
-        lanternCursor.style.visibility = 'hidden';
-        document.body.classList.remove('lantern-paused');
-    };
-
-    const handlePointerMove = (event) => {
-        if (event.pointerType && event.pointerType !== 'mouse') {
-            hideLantern();
-            return;
-        }
-
-        if (document.body.classList.contains('lantern-paused')) {
-            lanternTarget.x = event.clientX;
-            lanternTarget.y = event.clientY;
-            return;
-        }
-
-        lanternAnimating = true;
-        lanternCursor.style.visibility = 'visible';
-        lanternCursor.style.opacity = '1';
-        lanternTarget.x = event.clientX;
-        lanternTarget.y = event.clientY;
-
-        if (!lanternCursor.hasAttribute('data-animating')) {
-            lanternCursor.setAttribute('data-animating', 'true');
-            requestAnimationFrame(animateLantern);
-        }
-    };
-
-    window.addEventListener('pointermove', handlePointerMove);
-    window.addEventListener('pointerleave', hideLantern);
-}
-
-function pauseLantern() {
-    if (!lanternCursor) {
-        return;
-    }
-    lanternAnimating = false;
-    lanternCursor.style.opacity = '0';
-    lanternCursor.style.visibility = 'hidden';
-    lanternCursor.removeAttribute('data-animating');
-    document.body.classList.add('lantern-paused');
-}
-
-function resumeLantern() {
-    if (!lanternCursor) {
-        return;
-    }
-    document.body.classList.remove('lantern-paused');
-    lanternCursor.style.visibility = 'visible';
-}
-
-function prepareLanternSprite(targetElement) {
-    if (!targetElement) {
-        return;
-    }
-    if (!lanternSpritePromise) {
-        lanternSpritePromise = new Promise((resolve) => {
-            const img = new Image();
-            img.src = 'images.png';
-            img.onload = () => {
-                try {
-                    const canvas = document.createElement('canvas');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0);
-                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                    const data = imageData.data;
-                    for (let i = 0; i < data.length; i += 4) {
-                        const r = data[i];
-                        const g = data[i + 1];
-                        const b = data[i + 2];
-                        if (r > 240 && g > 240 && b > 240) {
-                            data[i + 3] = 0;
-                        }
-                    }
-                    ctx.putImageData(imageData, 0, 0);
-                    resolve(canvas.toDataURL());
-                } catch (error) {
-                    resolve('images.png');
-                }
-            };
-            img.onerror = () => resolve('images.png');
-        });
-    }
-
-    lanternSpritePromise.then((spriteUrl) => {
-        targetElement.style.backgroundImage = `url('${spriteUrl}')`;
-    });
-}
-
-const isInteractiveTarget = (target) => {
-    if (!target) {
-        return false;
-    }
-    return Boolean(target.closest(interactiveHoverSelector));
-};
-
-document.addEventListener('pointerover', (event) => {
-    if (!lanternCursor) {
-        return;
-    }
-    if (isInteractiveTarget(event.target)) {
-        pauseLantern();
-    }
-});
-
-document.addEventListener('pointerout', (event) => {
-    if (!lanternCursor) {
-        return;
-    }
-    if (!isInteractiveTarget(event.target)) {
-        return;
-    }
-    if (event.relatedTarget && isInteractiveTarget(event.relatedTarget)) {
-        return;
-    }
-    resumeLantern();
-});
 
 // Contact form handling
 const contactForm = document.getElementById('contact-form');
@@ -405,7 +234,6 @@ function typeWriter(element, text, speed = 100) {
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     initFogBackground();
-    initLanternCursor();
     if (heroTitle) {
         const originalText = heroTitle.innerHTML;
         // Uncomment the line below to enable typing effect
@@ -415,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Ensure fog initializes after full asset load as well
 window.addEventListener('load', initFogBackground);
-window.addEventListener('load', initLanternCursor);
 
 // Add scroll-to-top functionality
 const scrollToTopBtn = document.createElement('button');
