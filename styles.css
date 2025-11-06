@@ -1466,6 +1466,25 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .about-box-preview {
+        max-width: 90%;
+    }
+
+    .about-left .about-title {
+        font-size: 44px;
+    }
+
+    .about-right .about-photo {
+        width: 220px !important;
+        height: 290px !important;
+    }
+
+    .project-window-grid {
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -1553,6 +1572,115 @@ body {
         margin-bottom: 1rem;
     }
 
+    .about {
+        padding: 80px 0 120px;
+    }
+
+    .about-box-preview {
+        max-width: 100%;
+        margin: 3rem auto 2rem;
+        padding: 0 1rem;
+    }
+
+    .glass-card .content {
+        padding: 24px 20px 48px;
+        min-height: auto;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .about-left {
+        text-align: center;
+    }
+
+    .about-left .about-title {
+        font-size: 36px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+    }
+
+    .about-subtitle {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .uw-logo {
+        width: 24px;
+        height: 24px;
+        margin-left: 6px;
+    }
+
+    .about-desc {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+
+    .about-right {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-right .about-photo {
+        width: 200px !important;
+        height: 260px !important;
+        margin: 0 auto;
+    }
+
+    .about-actions {
+        position: static;
+        left: auto;
+        bottom: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .social-chip {
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+    }
+
+    .btn-download {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .about-cta-wrap {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .glassy-cta {
+        padding: 16px 28px;
+        font-size: 1rem;
+    }
+
+    .skills-marquee {
+        height: 44px;
+    }
+
+    .skill-pill {
+        font-size: 0.85rem;
+        padding: 0 12px;
+        height: 28px;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1595,6 +1723,15 @@ body {
     .project-window-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .project-image-wrapper {
+        order: 1;
+    }
+
+    .project-info {
+        order: 2;
+        padding-left: 0;
     }
 
     .project-content {
@@ -1706,6 +1843,83 @@ body {
         font-size: 1.1rem;
     }
 
+    .about {
+        padding: 60px 0 100px;
+    }
+
+    .about-box-preview {
+        margin: 2rem auto 1.5rem;
+        padding: 0 0.8rem;
+    }
+
+    .glass-card .content {
+        padding: 20px 16px 44px;
+    }
+
+    .about-left .about-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .about-subtitle {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .uw-logo {
+        width: 20px;
+        height: 20px;
+        margin-left: 4px;
+    }
+
+    .about-desc {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .about-right .about-photo {
+        width: 160px !important;
+        height: 210px !important;
+    }
+
+    .about-actions {
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .social-chip {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .btn-download {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .btn-download span {
+        display: inline-block;
+    }
+
+    .about-cta-wrap {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .glassy-cta {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+
+    .glass-card .filename {
+        font-size: 0.8rem;
+    }
+
+    .glass-card .tabbar {
+        padding: 12px 16px;
+    }
+
     .projects-windows {
         gap: 2rem;
     }
@@ -1716,6 +1930,15 @@ body {
 
     .project-info .highlight-title {
         font-size: 1.5rem;
+    }
+
+    .project-info .highlight-description {
+        font-size: 0.9rem;
+    }
+
+    .project-info .highlight-list li {
+        font-size: 0.85rem;
+        padding-left: 1.2rem;
     }
 
     .projects-showcase {
@@ -1769,6 +1992,95 @@ body {
     .nav-logo-img {
         height: 32px;
         width: auto;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-marker {
+        left: 4px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .timeline::before {
+        left: 12px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    .skills-marquee {
+        height: 40px;
+    }
+
+    .skill-pill {
+        font-size: 0.8rem;
+        padding: 0 10px;
+        height: 26px;
+    }
+
+    .glass-card {
+        border-width: 1.5px;
+    }
+
+    .glass-card .tabbar {
+        padding: 10px 14px;
+    }
+
+    .glass-card .filename {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-left .about-title {
+        font-size: 24px;
+    }
+
+    .about-subtitle {
+        font-size: 14px;
+    }
+
+    .about-desc {
+        font-size: 0.85rem;
+    }
+
+    .about-right .about-photo {
+        width: 140px !important;
+        height: 180px !important;
+    }
+
+    .social-chip {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .btn-download {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .glassy-cta {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .project-info .highlight-title {
+        font-size: 1.3rem;
     }
 }
 
