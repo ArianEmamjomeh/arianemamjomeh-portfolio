@@ -8,6 +8,7 @@
 html {
     scroll-behavior: smooth;
     background-color: #08090c;
+    overflow-x: hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
     line-height: 1.6;
     color: #e5e7eb;
     background-color: transparent;
+    overflow-x: hidden;
 }
 
 #vanta-bg {
@@ -42,7 +44,9 @@ body {
     background: transparent;
     backdrop-filter: none;
     z-index: 9999 !important;
+    border: none;
     border-bottom: none;
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
@@ -55,10 +59,39 @@ body {
     justify-content: flex-start; /* align items to the left */
     align-items: center;
     height: 70px;
+    border: none;
+    box-shadow: none;
 }
 
 /* Hide brand/logo from the navbar */
 .nav-logo { display: none; }
+
+/* Signature in nav */
+.nav-signature {
+    position: absolute;
+    right: -60px;
+    top: 65%;
+    transform: translateY(-50%);
+    z-index: 10;
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-signature-img {
+    height: 90px;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: left center;
+    transition: all 0.3s ease;
+}
+
+.nav-signature-img:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
 
 .nav-logo a {
     display: flex;
@@ -1677,6 +1710,17 @@ body {
         padding: 0 16px;
     }
 
+    .nav-signature {
+        right: -45px;
+        top: 70%;
+        width: 250px;
+    }
+
+    .nav-signature-img {
+        height: 70px;
+        max-width: none;
+    }
+
     .nav-link {
         font-size: 0.95rem;
     }
@@ -1992,6 +2036,17 @@ body {
     .nav-logo-img {
         height: 32px;
         width: auto;
+    }
+
+    .nav-signature {
+        right: -30px;
+        top: 75%;
+        width: 200px;
+    }
+
+    .nav-signature-img {
+        height: 55px;
+        max-width: none;
     }
 
     .timeline-item {
