@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arian Emamjomeh - Portfolio</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Great+Vibes&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,11 +16,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-signature">
-                <img src="signature-white.png" alt="Arian Emamjomeh Signature" class="nav-signature-img">
+                <img src="assets/signature-white.png" alt="Arian Emamjomeh Signature" class="nav-signature-img">
             </div>
             <div class="nav-logo">
                 <a href="#home">
-                    <img src="logo.png" alt="Arian Emamjomeh Logo" class="nav-logo-img">
+                    <img src="assets/logo.png" alt="Arian Emamjomeh Logo" class="nav-logo-img">
                     <span class="nav-logo-text">Arian Emamjomeh</span>
                 </a>
             </div>
@@ -54,7 +54,7 @@
                         <div class="about-grid">
                             <div class="about-left">
                                 <h1 class="about-title">i'm <span class="about-highlight">arian</span></h1>
-                                <h2 class="about-subtitle">studying compsci @ <span class="uwaterloo">uwaterloo</span> <img src="waterloo-logo.png" alt="University of Waterloo" class="uw-logo"></h2>
+                                <h2 class="about-subtitle">studying compsci @ <span class="uwaterloo">uwaterloo</span> <img src="assets/waterloo-logo.png" alt="University of Waterloo" class="uw-logo"></h2>
                                 <p class="about-desc">fullstack developer passionate about building innovative solutions and learning new tech.</p>
                                 <div class="about-actions">
                                     <a href="mailto:arianemamjomeh@gmail.com" class="social-chip" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="about-right">
                                 <div class="about-photo">
-                                    <img src="IMG_6394.png" alt="Arian Emamjomeh"/>
+                                    <img src="assets/IMG_6394.png" alt="Arian Emamjomeh"/>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                         <div class="content project-content">
                             <div class="project-window-grid">
                                 <div class="project-image-wrapper">
-                                    <img src="imitate.86d1e3db4c6c86ecfcbb.png" alt="IMitate medical simulation platform mockups">
+                                    <img src="assets/imitate.86d1e3db4c6c86ecfcbb.png" alt="IMitate medical simulation platform mockups">
                                 </div>
                                 <div class="project-info">
                                     <span class="highlight-label">Medical Simulation Platform</span>
@@ -173,7 +173,7 @@
                         <div class="content project-content">
                             <div class="project-window-grid">
                                 <div class="project-image-wrapper">
-                                    <img src="watsapp.png" alt="WatsApp onboarding and login mobile screens">
+                                    <img src="assets/watsapp.png" alt="WatsApp onboarding and login mobile screens">
                                 </div>
                                 <div class="project-info">
                                     <span class="highlight-label">Course Community App</span>
@@ -210,7 +210,7 @@
                         <div class="content project-content">
                             <div class="project-window-grid">
                                 <div class="project-image-wrapper">
-                                    <img src="security-default.webp" alt="GitHub Secret Scanner & Security Analysis Tool">
+                                    <img src="assets/security-default.webp" alt="GitHub Secret Scanner & Security Analysis Tool">
                                 </div>
                                 <div class="project-info">
                                     <span class="highlight-label">Security Analysis Tool</span>
@@ -241,7 +241,7 @@
                         <div class="content project-content">
                             <div class="project-window-grid">
                                 <div class="project-image-wrapper">
-                                    <img src="Screenshot 2025-11-14 213312.png" alt="ZenithFlow focus-study dashboard">
+                                    <img src="assets/Screenshot 2025-11-14 213312.png" alt="ZenithFlow focus-study dashboard">
                                 </div>
                                 <div class="project-info">
                                     <span class="highlight-label">Focus-Study Dashboard</span>
@@ -265,6 +265,37 @@
                         </div>
                     </div>
                 </div>
+                <!-- NBA Predictor Window -->
+                <div class="project-window">
+                    <div class="glass-card">
+                        <div class="tabbar">
+                            <div class="filename">nba-predictor.project</div>
+                            <div style="width: 40px;"></div>
+                        </div>
+                        <div class="content project-content">
+                            <div class="project-window-grid">
+                                <div class="project-image-wrapper nba-image-wrapper">
+                                    <img src="assets/Screenshot 2025-11-19 005058.png" alt="NBA Game Predictor ML application">
+                                </div>
+                                <div class="project-info">
+                                    <span class="highlight-label">ML Prediction Program</span>
+                                    <h3 class="highlight-title">NBA Game Predictor</h3>
+                                    <div class="tech-stack">Python, FastAPI, React, scikit-learn, SQLAlchemy, NBA API</div>
+                                    <p class="highlight-description">
+                                        Full-stack ML application predicting NBA game outcomes with machine learning models trained on historical game data.
+                                    </p>
+                                    <ul class="highlight-list">
+                                        <li>Engineered ML application predicting NBA game outcomes with 70% accuracy using Logistic Regression and Random Forest models trained on 4,000+ historical games.</li>
+                                        <li>Built scalable data pipeline processing 31 engineered features per game including team statistics, recent form, and head-to-head records.</li>
+                                        <li>Developed RESTful API with FastAPI serving predictions through 8 endpoints, achieving &lt;100ms latency for model inference.</li>
+                                    </ul>
+                                    <div class="project-links">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -279,7 +310,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-title-with-logo">
-                                <img src="Harvard_University_shield.png" alt="Harvard University" class="timeline-logo">
+                                <img src="assets/Harvard_University_shield.png" alt="Harvard University" class="timeline-logo">
                                 <div>
                                     <h3>Research Lead</h3>
                                     <span class="timeline-company">Harvard Medical School Research Study</span>
@@ -299,7 +330,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-title-with-logo">
-                                <img src="prohome.png" alt="Prohome Consulting" class="timeline-logo">
+                                <img src="assets/prohome.png" alt="Prohome Consulting" class="timeline-logo">
                                 <div>
                                     <h3>Architectural Firm Assistant</h3>
                                     <span class="timeline-company">Prohome Consulting Inc.</span>
@@ -320,7 +351,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-title-with-logo">
-                                <img src="ttco.jpg" alt="Tutoring Club" class="timeline-logo">
+                                <img src="assets/ttco.jpg" alt="Tutoring Club" class="timeline-logo">
                                 <div>
                                     <h3>Tutoring Club President</h3>
                                     <span class="timeline-company">Student Organization</span>
@@ -340,7 +371,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-title-with-logo">
-                                <img src="tsac.png" alt="Student Government" class="timeline-logo">
+                                <img src="assets/tsac.png" alt="Student Government" class="timeline-logo">
                                 <div>
                                     <h3>School Council Treasurer</h3>
                                     <span class="timeline-company">Student Government</span>

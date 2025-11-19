@@ -778,6 +778,16 @@ body {
     display: block;
 }
 
+.nba-image-wrapper {
+    overflow: hidden;
+}
+
+.nba-image-wrapper img {
+    width: 115%;
+    max-width: 115%;
+    object-position: center top;
+}
+
 .project-info {
     display: flex;
     flex-direction: column;
