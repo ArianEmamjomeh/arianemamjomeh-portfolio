@@ -2,18 +2,20 @@
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
-});
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -165,6 +167,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function activateTab(tabId) {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    let validTab = false;
+
+    tabButtons.forEach(button => {
+        const isActive = button.dataset.tabTarget === tabId;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-selected', isActive);
+        if (isActive) {
+            validTab = true;
+        }
+    });
+
+    tabPanels.forEach(panel => {
+        const isActive = panel.dataset.tabPanel === tabId;
+        panel.classList.toggle('active', isActive);
+        panel.hidden = !isActive;
+        if (isActive) {
+            validTab = true;
+        }
+    });
+
+    if (validTab) {
+        const shouldLockScroll = tabId === 'about';
+        document.body.style.overflowY = shouldLockScroll ? 'hidden' : 'auto';
+        document.documentElement.style.overflowY = shouldLockScroll ? 'hidden' : 'auto';
+    }
+
+    return validTab;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    if (!tabButtons.length || !tabPanels.length) return;
+
+    const initialTab = document.querySelector('.tab-button.active')?.dataset.tabTarget || tabPanels[0].dataset.tabPanel;
+    activateTab(initialTab);
+
+    const tabsSection = document.getElementById('profile-tabs');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (!button.dataset.tabTarget) return;
+            activateTab(button.dataset.tabTarget);
+            if (tabsSection) {
+                tabsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    document.querySelectorAll('[data-tab-target]').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const tabId = trigger.dataset.tabTarget;
+            if (tabId) {
+                activateTab(tabId);
+            }
+        });
+    });
+});
+
 // Add CSS for animations
 const style = document.createElement('style');
 style.textContent = `
@@ -243,6 +307,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Ensure fog initializes after full asset load as well
 window.addEventListener('load', initFogBackground);
+
+// Project Directory Scroll Detection and Highlighting
+document.addEventListener('DOMContentLoaded', () => {
+    const projectNavItems = document.querySelectorAll('.project-nav-item');
+    const projectWindows = document.querySelectorAll('.project-window');
+
+    if (!projectNavItems.length || !projectWindows.length) return;
+
+    // Intersection Observer for project highlighting
+    const projectObserverOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    };
+
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const projectId = entry.target.id;
+                const projectName = projectId.replace('project-', '');
+
+                // Remove active class from all nav items
+                projectNavItems.forEach(item => item.classList.remove('active'));
+
+                // Add active class to corresponding nav item
+                const activeNavItem = document.querySelector(`.project-nav-item[data-project="${projectName}"]`);
+                if (activeNavItem) {
+                    activeNavItem.classList.add('active');
+                }
+            }
+        });
+    }, projectObserverOptions);
+
+    // Observe all project windows
+    projectWindows.forEach(window => {
+        projectObserver.observe(window);
+    });
+
+    // Smooth scroll for project nav items
+    projectNavItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
 
 // Add scroll-to-top functionality
 const scrollToTopBtn = document.createElement('button');

@@ -12,7 +12,7 @@ A polished, single-page portfolio for Arian Emamjomeh built with semantic HTML, 
 ## Getting Started
 
 ```bash
-git clone https://github.com/SparkyHorizon/arianemamjomeh-portfolio.git
+git clone https://github.com/ArianEmamjomeh/arianemamjomeh-portfolio.git
 cd arianemamjomeh-portfolio
 ```
 

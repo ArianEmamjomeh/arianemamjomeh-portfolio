@@ -24,25 +24,21 @@
                     <span class="nav-logo-text">Arian Emamjomeh</span>
                 </a>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </div>
     </nav>
 
-    
+    <section class="tabs-nav-wrapper" id="profile-tabs">
+        <div class="tabs-nav" role="tablist" aria-label="Primary sections">
+            <button class="tab-button active" data-tab-target="about" aria-selected="true">About</button>
+            <button class="tab-button" data-tab-target="projects" aria-selected="false">Projects</button>
+            <button class="tab-button" data-tab-target="experience" aria-selected="false">Experience</button>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about tab-panel active" data-tab-panel="about">
         <div class="container">
+
             <!-- Glassmorphism About Preview Card -->
             <div class="about-box-preview">
                 <div class="glass-card">
@@ -59,7 +55,7 @@
                                 <div class="about-actions">
                                     <a href="mailto:arianemamjomeh@gmail.com" class="social-chip" aria-label="Email"><i class="fas fa-envelope"></i></a>
                                     <a href="https://www.linkedin.com/in/arian-emamjomeh" class="social-chip" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://github.com/SparkyHorizon" class="social-chip" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://github.com/ArianEmamjomeh" class="social-chip" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                     <a href="Arian_s_Resume.pdf" download class="btn-download" aria-label="Download Resume">
                                         <i class="fas fa-download"></i>
                                         <span>Resume</span>
@@ -109,62 +105,25 @@
                 </div>
             </div>
             
-            <!-- Glassy Projects CTA below card -->
-            <div class="about-cta-wrap">
-                <a href="#projects" class="glassy-cta" aria-label="Go to Projects">
-                    <span>Projects</span>
-                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </a>
-            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects tab-panel" data-tab-panel="projects">
+        <!-- Project Directory Sidebar -->
+        <aside class="project-directory">
+            <nav class="project-nav">
+                <a href="#project-watsapp" class="project-nav-item active" data-project="watsapp">WatsApp</a>
+                <a href="#project-scanner" class="project-nav-item" data-project="scanner">GitHub Secret Scanner</a>
+                <a href="#project-nba" class="project-nav-item" data-project="nba">NBA Game Predictor</a>
+                <a href="#project-imitate" class="project-nav-item" data-project="imitate">IMitate</a>
+                <a href="#project-zenithflow" class="project-nav-item" data-project="zenithflow">ZenithFlow</a>
+            </nav>
+        </aside>
         <div class="container">
-            <div class="projects-header">
-                <h2 class="section-title">Projects</h2>
-            </div>
             <div class="projects-windows">
-                <!-- IMitate Window -->
-                <div class="project-window">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">imitate.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper">
-                                    <img src="assets/imitate.86d1e3db4c6c86ecfcbb.png" alt="IMitate medical simulation platform mockups">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">Medical Simulation Platform</span>
-                                    <h3 class="highlight-title">IMitate</h3>
-                                    <div class="tech-stack">NextJS, TypeScript, FastAPI, Gemini API, Supabase, SQLite</div>
-                                    <p class="highlight-description">
-                                        A comprehensive medical education suite enabling patient simulations and diagnostic scoring for medical students and professionals.
-                                    </p>
-                                    <ul class="highlight-list">
-                                        <li>Orchestrated multi-branch patient encounters driven by Gemini API feedback.</li>
-                                        <li>Preloaded 150+ synthetic cases with FastAPI and SQLite pipelines for case rotation.</li>
-                                        <li>Delivered Supabase-auth dashboards that surface performance trends in real time.</li>
-                                    </ul>
-                                    <div class="project-links">
-                                        <a href="https://github.com/liyuxiao2/IMitate" class="project-link" aria-label="IMitate on GitHub">
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                        <a href="https://imitate-medical-sim.vercel.app/" class="project-link" aria-label="Open IMitate live demo">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- WatsApp Window -->
-                <div class="project-window">
+                <div class="project-window" id="project-watsapp">
                     <div class="glass-card">
                         <div class="tabbar">
                             <div class="filename">watsapp.project</div>
@@ -201,7 +160,7 @@
                     </div>
                 </div>
                 <!-- GitHub Secret Scanner Window -->
-                <div class="project-window">
+                <div class="project-window" id="project-scanner">
                     <div class="glass-card">
                         <div class="tabbar">
                             <div class="filename">secret-scanner.project</div>
@@ -231,8 +190,76 @@
                         </div>
                     </div>
                 </div>
+                <!-- NBA Predictor Window -->
+                <div class="project-window" id="project-nba">
+                    <div class="glass-card">
+                        <div class="tabbar">
+                            <div class="filename">nba-predictor.project</div>
+                            <div style="width: 40px;"></div>
+                        </div>
+                        <div class="content project-content">
+                            <div class="project-window-grid">
+                                <div class="project-image-wrapper nba-image-wrapper">
+                                    <img src="assets/Screenshot 2025-11-19 005058.png" alt="NBA Game Predictor ML application">
+                                </div>
+                                <div class="project-info">
+                                    <span class="highlight-label">ML Prediction Program</span>
+                                    <h3 class="highlight-title">NBA Game Predictor</h3>
+                                    <div class="tech-stack">Python, FastAPI, React, scikit-learn, SQLAlchemy, NBA API</div>
+                                    <p class="highlight-description">
+                                        Full-stack ML application predicting NBA game outcomes with machine learning models trained on historical game data.
+                                    </p>
+                                    <ul class="highlight-list">
+                                        <li>Engineered ML application predicting NBA game outcomes with 70% accuracy using Logistic Regression and Random Forest models trained on 4,000+ historical games.</li>
+                                        <li>Built scalable data pipeline processing 31 engineered features per game including team statistics, recent form, and head-to-head records.</li>
+                                        <li>Developed RESTful API with FastAPI serving predictions through 8 endpoints, achieving &lt;100ms latency for model inference.</li>
+                                    </ul>
+                                    <div class="project-links">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- IMitate Window -->
+                <div class="project-window" id="project-imitate">
+                    <div class="glass-card">
+                        <div class="tabbar">
+                            <div class="filename">imitate.project</div>
+                            <div style="width: 40px;"></div>
+                        </div>
+                        <div class="content project-content">
+                            <div class="project-window-grid">
+                                <div class="project-image-wrapper">
+                                    <img src="assets/imitate.86d1e3db4c6c86ecfcbb.png" alt="IMitate medical simulation platform mockups">
+                                </div>
+                                <div class="project-info">
+                                    <span class="highlight-label">Medical Simulation Platform</span>
+                                    <h3 class="highlight-title">IMitate</h3>
+                                    <div class="tech-stack">NextJS, TypeScript, FastAPI, Gemini API, Supabase, SQLite</div>
+                                    <p class="highlight-description">
+                                        A comprehensive medical education suite enabling patient simulations and diagnostic scoring for medical students and professionals.
+                                    </p>
+                                    <ul class="highlight-list">
+                                        <li>Orchestrated multi-branch patient encounters driven by Gemini API feedback.</li>
+                                        <li>Preloaded 150+ synthetic cases with FastAPI and SQLite pipelines for case rotation.</li>
+                                        <li>Delivered Supabase-auth dashboards that surface performance trends in real time.</li>
+                                    </ul>
+                                    <div class="project-links">
+                                        <a href="https://github.com/liyuxiao2/IMitate" class="project-link" aria-label="IMitate on GitHub">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="https://imitate-medical-sim.vercel.app/" class="project-link" aria-label="Open IMitate live demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- ZenithFlow Window -->
-                <div class="project-window">
+                <div class="project-window" id="project-zenithflow">
                     <div class="glass-card">
                         <div class="tabbar">
                             <div class="filename">zenithflow.project</div>
@@ -265,45 +292,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- NBA Predictor Window -->
-                <div class="project-window">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">nba-predictor.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper nba-image-wrapper">
-                                    <img src="assets/Screenshot 2025-11-19 005058.png" alt="NBA Game Predictor ML application">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">ML Prediction Program</span>
-                                    <h3 class="highlight-title">NBA Game Predictor</h3>
-                                    <div class="tech-stack">Python, FastAPI, React, scikit-learn, SQLAlchemy, NBA API</div>
-                                    <p class="highlight-description">
-                                        Full-stack ML application predicting NBA game outcomes with machine learning models trained on historical game data.
-                                    </p>
-                                    <ul class="highlight-list">
-                                        <li>Engineered ML application predicting NBA game outcomes with 70% accuracy using Logistic Regression and Random Forest models trained on 4,000+ historical games.</li>
-                                        <li>Built scalable data pipeline processing 31 engineered features per game including team statistics, recent form, and head-to-head records.</li>
-                                        <li>Developed RESTful API with FastAPI serving predictions through 8 endpoints, achieving &lt;100ms latency for model inference.</li>
-                                    </ul>
-                                    <div class="project-links">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience tab-panel" data-tab-panel="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
@@ -389,55 +384,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>
-                        I'm always interested in new opportunities, collaborations, and meaningful conversations. 
-                        Whether you have a project in mind or just want to chat about technology, feel free to reach out!
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:arianemamjomeh@gmail.com">arianemamjomeh@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:647-217-7371">647-217-7371</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/arian-emamjomeh">LinkedIn Profile</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/SparkyHorizon">GitHub Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -450,7 +396,7 @@
                     <a href="https://www.linkedin.com/in/arian-emamjomeh" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/SparkyHorizon" class="social-link">
+                    <a href="https://github.com/ArianEmamjomeh" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
