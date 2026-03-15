@@ -191,9 +191,8 @@ function activateTab(tabId) {
     });
 
     if (validTab) {
-        const shouldLockScroll = tabId === 'about';
-        document.body.style.overflowY = shouldLockScroll ? 'hidden' : 'auto';
-        document.documentElement.style.overflowY = shouldLockScroll ? 'hidden' : 'auto';
+        document.body.style.overflowY = 'auto';
+        document.documentElement.style.overflowY = 'auto';
     }
 
     return validTab;
