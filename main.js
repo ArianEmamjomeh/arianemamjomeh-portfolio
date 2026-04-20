@@ -151,14 +151,30 @@
         if (audioCtx.state === "suspended") audioCtx.resume();
         return audioCtx;
     }
-    const clickSample = new Audio("assets/universfield-computer-mouse-click-352734.mp3");
-    clickSample.preload = "auto";
-    clickSample.volume = 0.3;
+    let clickBuffer = null;
+    let clickLoading = false;
+    async function loadClickBuffer() {
+        if (clickBuffer || clickLoading) return;
+        clickLoading = true;
+        try {
+            const ctx = ensureCtx();
+            const res = await fetch("assets/universfield-computer-mouse-click-352734.mp3");
+            const ab = await res.arrayBuffer();
+            clickBuffer = await new Promise((resolve, reject) =>
+                ctx.decodeAudioData(ab, resolve, reject));
+        } catch (e) { /* no-op */ }
+        clickLoading = false;
+    }
     function playClick() {
         try {
-            const a = clickSample.cloneNode();
-            a.volume = clickSample.volume;
-            a.play().catch(() => {});
+            const ctx = ensureCtx();
+            if (!clickBuffer) { loadClickBuffer(); return; }
+            const src = ctx.createBufferSource();
+            src.buffer = clickBuffer;
+            const gain = ctx.createGain();
+            gain.gain.value = 0.3;
+            src.connect(gain).connect(ctx.destination);
+            src.start();
         } catch (e) { /* no-op */ }
     }
     function playNavClick() {
@@ -232,7 +248,10 @@
         }
     }
 
+    function primeAudio() { ensureCtx(); loadClickBuffer(); }
+
     function wireClickSounds() {
+        document.addEventListener("pointerdown", primeAudio, { once: true });
         document.addEventListener("click", (e) => {
             const navHit = e.target.closest(".topnav a, .brand");
             if (navHit) {
@@ -560,6 +579,14 @@
     function wireProjCardTilt() {
         /* removed by user request */
     }
+
+    // Swallow clicks on placeholder <a href="#"> so they don't scroll to top
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        const href = a.getAttribute("href");
+        if (href === "#" || href === "" || href == null) e.preventDefault();
+    });
 
     document.addEventListener("DOMContentLoaded", () => {
         buildTopbar();
