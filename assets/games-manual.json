@@ -21,9 +21,24 @@
         "category": "competitive",
         "rank": {
             "image": "videogameicons/Platinum_3_Rank.webp",
-            "label": "Platinum 3",
+            "label": "Platinum",
             "color": "110, 200, 220",
             "size": 80
+        },
+        "rating": 0,
+        "note": ""
+    },
+    {
+        "appid": "league",
+        "title": "League of Legends",
+        "cover": "videogameicons/EGS_LeagueofLegends_RiotGames_S2_1200x1600-112729f9da450fe377e11d40029c4831.jpg",
+        "cover_fallback": "videogameicons/EGS_LeagueofLegends_RiotGames_S2_1200x1600-112729f9da450fe377e11d40029c4831.jpg",
+        "category": "competitive",
+        "rank": {
+            "image": "videogameicons/5.png",
+            "label": "Platinum",
+            "color": "120, 200, 255",
+            "size": 105
         },
         "rating": 0,
         "note": ""
