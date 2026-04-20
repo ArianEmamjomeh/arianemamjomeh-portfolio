@@ -957,16 +957,18 @@ main, .topbar, footer { position: relative; z-index: 1; }
 }
 .rank-badge {
     text-align: center;
-    margin-top: -56px;
-    margin-bottom: -12px;
+    /* Icon hangs a constant 36px below the cover regardless of rank size,
+       so text underneath lines up across cards with differently-sized badges. */
+    margin-top: calc((var(--rank-size, 110px) - 36px) * -1);
+    margin-bottom: -4px;
     position: relative;
     z-index: 2;
     pointer-events: none;
     line-height: 0;
 }
 .rank-badge img {
-    width: 110px;
-    height: 110px;
+    width: var(--rank-size, 110px);
+    height: var(--rank-size, 110px);
     object-fit: contain;
     display: inline-block;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(var(--rank-color, 180, 120, 230), 0.65));

@@ -22,7 +22,8 @@
         "rank": {
             "image": "videogameicons/Platinum_3_Rank.webp",
             "label": "Platinum 3",
-            "color": "110, 200, 220"
+            "color": "110, 200, 220",
+            "size": 80
         },
         "rating": 0,
         "note": ""

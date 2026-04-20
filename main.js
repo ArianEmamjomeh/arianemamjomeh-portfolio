@@ -514,7 +514,8 @@
                 let coverInside = "";
                 if (g.rank && g.rank.image && g.category === "competitive") {
                     const rankColor = g.rank.color || "180, 120, 230";
-                    belowCover = `<div class="rank-badge" style="--rank-color: ${rankColor};"><img src="${g.rank.image}" alt="${g.rank.label || "rank"}"></div>`;
+                    const rankSize = g.rank.size || 110;
+                    belowCover = `<div class="rank-badge" style="--rank-color: ${rankColor}; --rank-size: ${rankSize}px;"><img src="${g.rank.image}" alt="${g.rank.label || "rank"}"></div>`;
                 } else if ((g.achievements_total || 0) > 0) {
                     const pct = Math.round((g.achievements_earned / g.achievements_total) * 100);
                     const is100 = pct === 100;
