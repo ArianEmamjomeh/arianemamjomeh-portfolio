@@ -3,12 +3,14 @@
    top nav injection, tabs, reveal on scroll
    ========================================================== */
 (function () {
-    const CURRENT = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-
     const NAV = [
-        { href: "index.html",      label: "me" },
-        { href: "projects.html",   label: "projects" }
+        { href: "index.html",    label: "me" },
+        { href: "projects.html", label: "projects" }
     ];
+
+    function currentPage() {
+        return (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    }
 
     const ICONS = {
         mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>',
@@ -18,8 +20,9 @@
     };
 
     function buildTopbar() {
+        const cur = currentPage();
         const links = NAV.map(n => {
-            const active = n.href.toLowerCase() === CURRENT ? " active" : "";
+            const active = n.href.toLowerCase() === cur ? " active" : "";
             return `<a href="${n.href}" class="${active.trim()}">${n.label}</a>`;
         }).join("");
 
@@ -180,25 +183,74 @@
         } catch (e) { /* no-op if audio unsupported */ }
     }
 
+    const pageCache = new Map();
+    async function swapPage(url, push = true) {
+        try {
+            let html = pageCache.get(url);
+            if (!html) {
+                const res = await fetch(url, { credentials: "same-origin" });
+                if (!res.ok) throw new Error("fetch failed");
+                html = await res.text();
+                pageCache.set(url, html);
+            }
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            const newMain = doc.querySelector("main");
+            const currentMain = document.querySelector("main");
+            if (!newMain || !currentMain) throw new Error("missing main");
+            const newTitle = doc.querySelector("title")?.textContent || document.title;
+            const newBodyClass = doc.body.className;
+
+            const apply = () => {
+                currentMain.replaceWith(newMain);
+                document.body.className = newBodyClass;
+                document.title = newTitle;
+                if (push) history.pushState({ url }, "", url);
+                window.scrollTo(0, 0);
+                // Rewire behaviors for the freshly inserted DOM
+                revealOnScroll();
+                wireExpTabs();
+                wireProjectFilters();
+                wireWorkRowHover();
+                wirePrevToggle();
+                splitHeroWords();
+                // Refresh active state on topnav
+                const cur = currentPage();
+                document.querySelectorAll(".topnav a").forEach(a => {
+                    a.classList.toggle("active", (a.getAttribute("href") || "").toLowerCase() === cur);
+                });
+            };
+
+            if (document.startViewTransition) {
+                document.startViewTransition(apply);
+            } else {
+                apply();
+            }
+        } catch (err) {
+            window.location.href = url; // graceful fallback
+        }
+    }
+
     function wireClickSounds() {
         document.addEventListener("click", (e) => {
             const navHit = e.target.closest(".topnav a, .brand");
             if (navHit) {
                 playNavClick();
-                const navigatesSameTab = navHit.tagName === "A" &&
-                    navHit.getAttribute("href") &&
-                    navHit.getAttribute("target") !== "_blank" &&
-                    !navHit.getAttribute("href").startsWith("#") &&
-                    !navHit.getAttribute("href").startsWith("mailto:");
-                if (navigatesSameTab) {
+                const href = navHit.getAttribute("href") || "";
+                const isInternalPage = /^(index|projects|experience|map)\.html$/i.test(href);
+                if (isInternalPage) {
                     e.preventDefault();
-                    setTimeout(() => { window.location.href = navHit.href; }, 340);
+                    if (href.toLowerCase() !== currentPage()) swapPage(href);
                 }
             } else {
                 playClick();
             }
         }, true);
     }
+
+    window.addEventListener("popstate", () => {
+        const url = currentPage();
+        swapPage(url, false);
+    });
 
     function wireWorkRowMagnet() {
         /* removed by user request */
