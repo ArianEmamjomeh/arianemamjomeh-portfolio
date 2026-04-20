@@ -4,7 +4,8 @@
       "Bash(unzip -l \"/d/Downloads/Personal Website.zip\")",
       "Bash(mkdir -p /tmp/portfolio-new)",
       "Bash(unzip -q \"/d/Downloads/Personal Website.zip\" -d /tmp/portfolio-new)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(git mv *)"
     ],
     "additionalDirectories": [
       "\\tmp"

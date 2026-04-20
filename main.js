@@ -6,11 +6,19 @@
     const NAV = [
         { href: "index.html",    label: "me" },
         { href: "projects.html", label: "projects" },
-        { href: "games.html",    label: "things" }
+        { href: "things.html",   label: "things" }
     ];
 
     function currentPage() {
-        return (location.pathname.split("/").pop() || "index.html").toLowerCase();
+        const p = location.pathname.replace(/\/$/, "").split("/").pop();
+        if (!p) return "index.html";
+        return (p.endsWith(".html") ? p : p + ".html").toLowerCase();
+    }
+
+    // "projects.html" → "/projects", "index.html" → "/"
+    function cleanUrl(file) {
+        const name = file.replace(/\.html$/i, "");
+        return name === "index" ? "/" : "/" + name;
     }
 
     const ICONS = {
@@ -221,7 +229,7 @@
                 currentMain.replaceWith(newMain);
                 document.body.className = newBodyClass;
                 document.title = newTitle;
-                if (push) history.pushState({ url }, "", url);
+                if (push) history.pushState({ url }, "", cleanUrl(url));
                 window.scrollTo(0, 0);
                 // Rewire behaviors for the freshly inserted DOM
                 revealOnScroll();
@@ -257,7 +265,7 @@
             if (navHit) {
                 playNavClick();
                 const href = navHit.getAttribute("href") || "";
-                const isInternalPage = /^(index|projects|experience|map|games)\.html$/i.test(href);
+                const isInternalPage = /^(index|projects|experience|map|games|things)\.html$/i.test(href);
                 if (isInternalPage) {
                     e.preventDefault();
                     if (href.toLowerCase() !== currentPage()) swapPage(href);
