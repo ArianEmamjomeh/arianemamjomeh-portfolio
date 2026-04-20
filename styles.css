@@ -937,6 +937,7 @@ main, .topbar, footer { position: relative; z-index: 1; }
     -webkit-backdrop-filter: blur(4px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     pointer-events: none;
+    z-index: 2;
 }
 .cover-hours {
     top: 10px;
@@ -968,7 +969,7 @@ main, .topbar, footer { position: relative; z-index: 1; }
     height: 110px;
     object-fit: contain;
     display: inline-block;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(180, 120, 230, 0.65));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(var(--rank-color, 180, 120, 230), 0.65));
 }
 .game-card:hover .game-cover {
     box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.75);
@@ -1149,6 +1150,7 @@ main, .topbar, footer { position: relative; z-index: 1; }
     align-self: flex-start;
     margin-top: 4px;
 }
+.game-modal-rank[hidden] { display: none; }
 .game-modal-rank {
     display: inline-flex;
     align-items: center;
@@ -1159,8 +1161,8 @@ main, .topbar, footer { position: relative; z-index: 1; }
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 6px 10px 6px 8px;
-    background: rgba(180, 120, 230, 0.08);
-    border: 1px solid rgba(180, 120, 230, 0.35);
+    background: rgba(var(--rank-color, 180, 120, 230), 0.08);
+    border: 1px solid rgba(var(--rank-color, 180, 120, 230), 0.35);
     border-radius: 6px;
     align-self: flex-start;
     margin-top: 4px;
@@ -1169,10 +1171,10 @@ main, .topbar, footer { position: relative; z-index: 1; }
     width: 24px;
     height: 24px;
     object-fit: contain;
-    filter: drop-shadow(0 0 6px rgba(180, 120, 230, 0.6));
+    filter: drop-shadow(0 0 6px rgba(var(--rank-color, 180, 120, 230), 0.6));
 }
 .modal-rank-name {
-    color: #c88aff;
+    color: rgb(var(--rank-color, 180, 120, 230));
     font-weight: 600;
 }
 .game-modal-note-wrap {

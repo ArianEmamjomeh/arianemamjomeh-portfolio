@@ -321,6 +321,7 @@
 
         const rankEl = scrim.querySelector(".game-modal-rank");
         if (g.rank && g.rank.image && g.category === "competitive") {
+            rankEl.style.setProperty("--rank-color", g.rank.color || "180, 120, 230");
             scrim.querySelector(".modal-rank-img").src = g.rank.image;
             scrim.querySelector(".modal-rank-name").textContent = (g.rank.label || "").toUpperCase();
             rankEl.hidden = false;
@@ -512,7 +513,8 @@
                 let belowCover = "";
                 let coverInside = "";
                 if (g.rank && g.rank.image && g.category === "competitive") {
-                    belowCover = `<div class="rank-badge"><img src="${g.rank.image}" alt="${g.rank.label || "rank"}"></div>`;
+                    const rankColor = g.rank.color || "180, 120, 230";
+                    belowCover = `<div class="rank-badge" style="--rank-color: ${rankColor};"><img src="${g.rank.image}" alt="${g.rank.label || "rank"}"></div>`;
                 } else if ((g.achievements_total || 0) > 0) {
                     const pct = Math.round((g.achievements_earned / g.achievements_total) * 100);
                     const is100 = pct === 100;
