@@ -1,0 +1,15 @@
+[
+    {
+        "appid": "tft",
+        "title": "Teamfight Tactics",
+        "cover": "videogameicons/t-j-geisen-set3-keyart-thumbnail-artstation-v002.jpg",
+        "cover_fallback": "videogameicons/t-j-geisen-set3-keyart-thumbnail-artstation-v002.jpg",
+        "category": "competitive",
+        "rank": {
+            "image": "videogameicons/F4T6IDwW0AUcfMm.png",
+            "label": "Master"
+        },
+        "rating": 0,
+        "note": ""
+    }
+]
