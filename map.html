@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="map-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map — arian emamjomeh</title>
+    <link rel="icon" type="image/png" href="assets/iconlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=27">
+    <link rel="stylesheet" href="map.css?v=7">
+</head>
+<body>
+    <div class="map-stage" aria-label="Interactive map">
+        <div class="map-canvas"></div>
+
+        <div class="map-chrome map-controls">
+            <button class="map-btn" data-action="zoom-in" aria-label="zoom in" title="zoom in">＋</button>
+            <button class="map-btn" data-action="zoom-out" aria-label="zoom out" title="zoom out">−</button>
+            <button class="map-btn" data-action="recenter" aria-label="recenter" title="recenter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Album modal -->
+    <div class="album-scrim" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="album-card">
+            <div class="album-header">
+                <div>
+                    <div class="album-title"><em>place</em></div>
+                    <div class="album-meta"></div>
+                </div>
+                <button class="album-close" aria-label="close">close ✕</button>
+            </div>
+            <div class="album-body">
+                <div class="album-grid"></div>
+            </div>
+            <div class="album-viewer">
+                <button class="vclose" aria-label="close viewer">✕</button>
+                <button class="vnav vprev" aria-label="previous">‹</button>
+                <img alt="">
+                <button class="vnav vnext" aria-label="next">›</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js?v=19"></script>
+    <script src="map.js?v=4"></script>
+</body>
+</html>

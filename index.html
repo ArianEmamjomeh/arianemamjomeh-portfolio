@@ -3,376 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arian Emamjomeh - Portfolio</title>
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Great+Vibes&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>arian emamjomeh</title>
+    <link rel="icon" type="image/png" href="assets/iconlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=28">
 </head>
 <body>
-    <div id="vanta-bg" aria-hidden="true"></div>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">
-                    <img src="assets/logo.png" alt="Arian Emamjomeh Logo" class="nav-logo-img">
-                    <span class="nav-logo-text">Arian Emamjomeh</span>
+    <main>
+        <section class="me-hero">
+            <h1 class="me-hello">hey, i'm <em>arian</em> <span class="me-wave">👋</span></h1>
+            <div class="me-affil">
+                <span>cs @ <a class="affil-link" href="https://uwaterloo.ca" target="_blank" rel="noopener">uwaterloo</a></span>
+                <img class="affil-crest" src="assets/uwaterloo-seal.svg" alt="" onerror="this.style.display='none'">
+            </div>
+        </section>
+
+        <section class="work-list-section reveal">
+            <div class="section-eyebrow">experiences</div>
+            <div class="work-list">
+                <a class="work-row" data-hover-color="rgba(28, 87, 164, 0.16)" href="https://www.volvocars.com/" target="_blank" rel="noopener">
+                    <div class="work-logo" style="background: #ffffff;">
+                        <img src="assets/volvo-logo-1999-2013-01.jpg" alt="Volvo" style="padding: 0; object-fit: contain; transform: scale(1.15);">
+                    </div>
+                    <div class="work-meta">
+                        <div class="work-name">Volvo</div>
+                        <div class="work-role">Software Engineering Intern</div>
+                    </div>
+                    <div class="work-date">Incoming</div>
+                </a>
+
+                <a class="work-row" data-hover-color="rgba(58, 141, 255, 0.12)" href="https://www.inductivesolution.ai/" target="_blank" rel="noopener">
+                    <div class="work-logo" style="background: #ffffff;">
+                        <img src="assets/inductive-mark.png?v=3" alt="Inductive Solution" style="padding: 10px; object-fit: contain;">
+                    </div>
+                    <div class="work-meta">
+                        <div class="work-name">Inductive Solution</div>
+                        <div class="work-role">Software Engineering Intern</div>
+                    </div>
+                    <div class="work-date">Jan '26 — Now<br><span class="work-loc">boston, ma</span></div>
+                </a>
+
+                <a class="work-row" data-hover-color="rgba(164, 31, 54, 0.14)" href="https://hms.harvard.edu/" target="_blank" rel="noopener">
+                    <div class="work-logo" style="background: linear-gradient(135deg, #a41f36, #7a0d22);">
+                        <img src="assets/harvard.png" alt="Harvard" onerror="this.style.display='none';this.parentElement.textContent='H';">
+                    </div>
+                    <div class="work-meta">
+                        <div class="work-name">Harvard Medical School</div>
+                        <div class="work-role">Research Lead</div>
+                    </div>
+                    <div class="work-date">Sep '24 — Sep '25</div>
+                </a>
+
+            </div>
+
+            <button class="prev-toggle" type="button" aria-expanded="false" aria-controls="prev-list">
+                <span class="prev-toggle-label">previously</span>
+                <span class="prev-toggle-icon" aria-hidden="true">+</span>
+            </button>
+
+            <div class="prev-list" id="prev-list" aria-hidden="true">
+                <a class="work-row" data-hover-color="rgba(127, 225, 208, 0.18)" href="#" target="_blank" rel="noopener">
+                    <div class="work-logo" style="background: #7fe1d0;">
+                        <img src="assets/trudeau.png" alt="Trudeau Tutoring" style="object-fit: cover; padding: 0;">
+                    </div>
+                    <div class="work-meta">
+                        <div class="work-name">Trudeau Tutoring</div>
+                        <div class="work-role">President</div>
+                    </div>
+                    <div class="work-date">2023 — 2025</div>
+                </a>
+
+                <a class="work-row" data-hover-color="rgba(120, 30, 40, 0.16)" href="https://www.tsac.ca/" target="_blank" rel="noopener">
+                    <div class="work-logo" style="background: #f5e8c8;">
+                        <img src="assets/tsac.png?v=2" alt="TSAC" style="object-fit: contain; padding: 6px;">
+                    </div>
+                    <div class="work-meta">
+                        <div class="work-name">Tsac</div>
+                        <div class="work-role">Treasurer</div>
+                    </div>
+                    <div class="work-date">2024 — 2025</div>
                 </a>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <section class="tabs-nav-wrapper" id="profile-tabs">
-        <div class="tabs-nav" role="tablist" aria-label="Primary sections">
-            <button class="tab-button active" data-tab-target="about" aria-selected="true">About</button>
-            <button class="tab-button" data-tab-target="projects" aria-selected="false">Projects</button>
-            <button class="tab-button" data-tab-target="experience" aria-selected="false">Experience</button>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about tab-panel active" data-tab-panel="about">
-        <div class="container">
-
-            <!-- Glassmorphism About Preview Card -->
-            <div class="about-box-preview">
-                <div class="glass-card">
-                    <div class="tabbar">
-                        <div class="filename">about-me.txt</div>
-                        <div style="width: 40px;"></div>
+        <section class="me-links reveal" style="display:none">
+            <div class="section-eyebrow">elsewhere</div>
+            <div class="me-links-grid">
+                <a class="me-link-card" href="projects.html">
+                    <div>
+                        <span class="label">projects</span>
+                        <span class="hint">things i've built</span>
                     </div>
-                    <div class="content">
-                        <div class="about-grid">
-                            <div class="about-left">
-                                <h1 class="about-title">i'm <span class="about-highlight">arian</span></h1>
-                                <h2 class="about-subtitle">studying compsci @ <span class="uwaterloo">uwaterloo</span> <img src="assets/waterloo-logo.png" alt="University of Waterloo" class="uw-logo"></h2>
-                                <p class="about-desc">fullstack developer passionate about building innovative solutions and learning new tech.</p>
-                                <div class="about-actions">
-                                    <a href="mailto:arianemamjomeh@gmail.com" class="social-chip" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                                    <a href="https://www.linkedin.com/in/arian-emamjomeh" class="social-chip" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://github.com/ArianEmamjomeh" class="social-chip" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                                    <a href="Arian_s_Resume.pdf" download class="btn-download" aria-label="Download Resume">
-                                        <i class="fas fa-download"></i>
-                                        <span>Resume</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="about-right">
-                                <div class="about-photo">
-                                    <img src="assets/CompressedCHina.png" alt="Arian Emamjomeh"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="about-blob"></div>
+                    <span class="arrow">→</span>
+                </a>
+                <a class="me-link-card" href="experience.html">
+                    <div>
+                        <span class="label">experience</span>
+                        <span class="hint">work &amp; research</span>
                     </div>
-                </div>
+                    <span class="arrow">→</span>
+                </a>
+                <a class="me-link-card" href="https://github.com/arianemamjomeh" target="_blank" rel="noopener">
+                    <div>
+                        <span class="label">github</span>
+                        <span class="hint">@arianemamjomeh</span>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+                <a class="me-link-card" href="mailto:arianemamjomeh@gmail.com">
+                    <div>
+                        <span class="label">get in touch</span>
+                        <span class="hint">arianemamjomeh@gmail.com</span>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
             </div>
-            
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects tab-panel" data-tab-panel="projects">
-        <!-- Project Directory Sidebar -->
-        <aside class="project-directory">
-            <nav class="project-nav">
-                <a href="#project-watsapp" class="project-nav-item active" data-project="watsapp">WatsApp</a>
-                <a href="#project-scanner" class="project-nav-item" data-project="scanner">GitHub Secret Scanner</a>
-                <a href="#project-nba" class="project-nav-item" data-project="nba">NBA Game Predictor</a>
-                <a href="#project-imitate" class="project-nav-item" data-project="imitate">IMitate</a>
-                <a href="#project-taski" class="project-nav-item" data-project="taski">Taski</a>
-                <a href="#project-zenithflow" class="project-nav-item" data-project="zenithflow">ZenithFlow</a>
-            </nav>
-        </aside>
-        <div class="container">
-            <div class="projects-windows">
-                <!-- WatsApp Window -->
-                <div class="project-window" id="project-watsapp">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">watsapp.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper">
-                                    <img src="assets/watsapp.png" alt="WatsApp onboarding and login mobile screens">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">Course Community App</span>
-                                    <h3 class="highlight-title">WatsApp</h3>
-                                    <div class="tech-stack">Expo, React Native, Supabase, TypeScript</div>
-                                    <p class="highlight-description">
-                                        A mobile-first study hub for Waterloo students featuring course-based chat rooms, file sharing, and collaborative study groups. Built with React Native and Supabase for real-time messaging, user authentication, and moderation tools.
-                                    </p>
-                                    <div class="project-links">
-                                        <a href="https://github.com/JeffGuo-06/WatsApp" class="project-link" aria-label="WatsApp on GitHub" target="_blank" rel="noopener noreferrer">
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                        <a href="https://watsapp.ca" class="project-link" aria-label="Open WatsApp live demo" target="_blank" rel="noopener noreferrer">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- GitHub Secret Scanner Window -->
-                <div class="project-window" id="project-scanner">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">secret-scanner.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper">
-                                    <img src="assets/security-default.webp" alt="GitHub Secret Scanner & Security Analysis Tool">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">Security Analysis Tool</span>
-                                    <h3 class="highlight-title">GitHub Secret Scanner</h3>
-                                    <div class="tech-stack">Python, Gemini API, Github API, Entropy Analysis</div>
-                                    <p class="highlight-description">
-                                        A security scanner that analyzes GitHub commit history to detect leaked credentials and sensitive information. Processes millions of events from GH Archives with an LLM-integrated filter using Gemini API to reduce false positives by 90%+.
-                                    </p>
-                                    <div class="project-links">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- NBA Predictor Window -->
-                <div class="project-window" id="project-nba">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">nba-predictor.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper nba-image-wrapper">
-                                    <img src="assets/Screenshot 2025-11-19 005058.png" alt="NBA Game Predictor ML application">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">ML Prediction Program</span>
-                                    <h3 class="highlight-title">NBA Game Predictor</h3>
-                                    <div class="tech-stack">Python, FastAPI, React, scikit-learn, SQLAlchemy, NBA API</div>
-                                    <p class="highlight-description">
-                                        Full-stack ML application predicting NBA game outcomes with 70% accuracy using Logistic Regression and Random Forest models trained on 4,000+ historical games. Features a FastAPI backend processing 31 engineered features per game with sub-100ms inference latency.
-                                    </p>
-                                    <div class="project-links">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- IMitate Window -->
-                <div class="project-window" id="project-imitate">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">imitate.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper">
-                                    <img src="assets/imitate.86d1e3db4c6c86ecfcbb.png" alt="IMitate medical simulation platform mockups">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">Medical Simulation Platform</span>
-                                    <h3 class="highlight-title">IMitate</h3>
-                                    <div class="tech-stack">NextJS, TypeScript, FastAPI, Gemini API, Supabase, SQLite</div>
-                                    <p class="highlight-description">
-                                        A medical education platform enabling AI-driven patient simulations and diagnostic scoring. Features 150+ synthetic cases with multi-branch encounters powered by Gemini API, plus real-time performance dashboards with Supabase authentication.
-                                    </p>
-                                    <div class="project-links">
-                                        <a href="https://github.com/liyuxiao2/IMitate" class="project-link" aria-label="IMitate on GitHub" target="_blank" rel="noopener noreferrer">
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                        <a href="https://imitate-medical-sim.vercel.app/" class="project-link" aria-label="Open IMitate live demo" target="_blank" rel="noopener noreferrer">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Taski Window -->
-                <div class="project-window" id="project-taski">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">taski.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper">
-                                    <img src="assets/taski.png" alt="Taski decentralized marketplace iOS app">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">Decentralized Marketplace</span>
-                                    <h3 class="highlight-title">Taski</h3>
-                                    <div class="tech-stack">SwiftUI, Solana, Gemini API, RPC, Smart Contracts</div>
-                                    <p class="highlight-description">
-                                        A native iOS decentralized marketplace bridging household tasks with the Solana blockchain. Features AI-powered verification using Google Gemini to validate task completion, smart vault escrow for secure payments, and instant crypto payouts. Built with SwiftUI and low-level Solana RPC integration for seamless blockchain interactions.
-                                    </p>
-                                    <div class="project-links">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ZenithFlow Window -->
-                <div class="project-window" id="project-zenithflow">
-                    <div class="glass-card">
-                        <div class="tabbar">
-                            <div class="filename">zenithflow.project</div>
-                            <div style="width: 40px;"></div>
-                        </div>
-                        <div class="content project-content">
-                            <div class="project-window-grid">
-                                <div class="project-image-wrapper">
-                                    <img src="assets/Screenshot 2025-11-14 213312.png" alt="ZenithFlow focus-study dashboard">
-                                </div>
-                                <div class="project-info">
-                                    <span class="highlight-label">Focus-Study Dashboard</span>
-                                    <h3 class="highlight-title">ZenithFlow</h3>
-                                    <div class="tech-stack">React, Spotify Web API, OAuth 2.0, Serverless Functions, localStorage</div>
-                                    <p class="highlight-description">
-                                        An all-in-one study dashboard combining Spotify playback control via OAuth 2.0, a Notion-style rich text editor with auto-save, and an animated background—all in a clean split-screen layout.
-                                    </p>
-                                    <div class="project-links">
-                                        <a href="https://zenithflow-one.vercel.app/" class="project-link" aria-label="Open ZenithFlow live demo" target="_blank" rel="noopener noreferrer">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience tab-panel" data-tab-panel="experience">
-        <div class="container">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-with-logo">
-                                <img src="assets/Harvard_University_shield.png" alt="Harvard University" class="timeline-logo">
-                                <div>
-                                    <h3>Research Lead</h3>
-                                    <span class="timeline-company">Harvard Medical School Research Study</span>
-                                    <span class="timeline-date">September 2024 – Present</span>
-                                </div>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Conducted a research study on the effects of social media on adolescent behaviour and sleep quality under the guidance of Amirreza Haghighi, lecturer of medicine at Harvard Medical School</li>
-                            <li>Surveyed 150+ students from Iran and Canada to collect and analyze data to construct a reputable research paper</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-with-logo">
-                                <img src="assets/prohome.png" alt="Prohome Consulting" class="timeline-logo">
-                                <div>
-                                    <h3>Architectural Firm Assistant</h3>
-                                    <span class="timeline-company">Prohome Consulting Inc.</span>
-                                    <span class="timeline-date">July 2024 – August 2025</span>
-                                </div>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Assisted and managed the construction and renovation of 20+ houses</li>
-                            <li>Conducted administrative tasks, including file management, data entry, and appointment scheduling</li>
-                            <li>Maintained residential properties, performed site clean-up, and assisted with repairs and renovations</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-with-logo">
-                                <img src="assets/ttco.jpg" alt="Tutoring Club" class="timeline-logo">
-                                <div>
-                                    <h3>Tutoring Club President</h3>
-                                    <span class="timeline-company">Student Organization</span>
-                                    <span class="timeline-date">May 2023 – June 2025</span>
-                                </div>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Organized weekly tutoring sessions and helped grow the club from 100 to 500+ tutors and tutees</li>
-                            <li>Created an algorithm to pair tutees and tutors, helping 50% more students find a tutor throughout the year</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-with-logo">
-                                <img src="assets/tsac.png" alt="Student Government" class="timeline-logo">
-                                <div>
-                                    <h3>School Council Treasurer</h3>
-                                    <span class="timeline-company">Student Government</span>
-                                    <span class="timeline-date">June 2023 – June 2025</span>
-                                </div>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Created and tracked a budgeting plan of $45,000 using Excel to be used throughout the school year</li>
-                            <li>Led a team of student council members to plan and execute school-wide initiatives for 1200+ students</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Arian Emamjomeh. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="mailto:arianemamjomeh@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/arian-emamjomeh" class="social-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/ArianEmamjomeh" class="social-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.fog.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+    <script src="main.js?v=29"></script>
 </body>
 </html>

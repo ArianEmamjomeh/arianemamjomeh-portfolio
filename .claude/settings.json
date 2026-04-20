@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -l \"/d/Downloads/Personal Website.zip\")",
+      "Bash(mkdir -p /tmp/portfolio-new)",
+      "Bash(unzip -q \"/d/Downloads/Personal Website.zip\" -d /tmp/portfolio-new)",
+      "Read(//tmp/**)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}
