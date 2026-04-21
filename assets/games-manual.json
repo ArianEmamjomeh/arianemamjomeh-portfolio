@@ -42,5 +42,149 @@
         },
         "rating": 0,
         "note": ""
+    },
+    {
+        "appid": "animal-crossing",
+        "title": "Animal Crossing: New Horizons",
+        "cover": "nintendogames/animalcrossing.jpg",
+        "cover_fallback": "nintendogames/animalcrossing.jpg",
+        "rating": 3.5,
+        "playtime_hours": 120,
+        "note": ""
+    },
+    {
+        "appid": "cuphead",
+        "title": "Cuphead",
+        "cover": "nintendogames/cuphead.jpg",
+        "cover_fallback": "nintendogames/cuphead.jpg",
+        "rating": 4,
+        "playtime_hours": 50,
+        "note": ""
+    },
+    {
+        "appid": "dkc-returns",
+        "title": "Donkey Kong Country Returns",
+        "cover": "nintendogames/Donkeykongcountryreturns.jpg",
+        "cover_fallback": "nintendogames/Donkeykongcountryreturns.jpg",
+        "rating": 4.5,
+        "playtime_hours": 30,
+        "note": ""
+    },
+    {
+        "appid": "dkc-tropical-freeze",
+        "title": "Donkey Kong Country: Tropical Freeze",
+        "cover": "nintendogames/tropicalfreeze.jpg",
+        "cover_fallback": "nintendogames/tropicalfreeze.jpg",
+        "rating": 3,
+        "playtime_hours": 20,
+        "note": ""
+    },
+    {
+        "appid": "pokemon-legends-arceus",
+        "title": "Pokémon Legends: Arceus",
+        "cover": "nintendogames/legendsarceus.jpg",
+        "cover_fallback": "nintendogames/legendsarceus.jpg",
+        "rating": 3.5,
+        "playtime_hours": 30,
+        "note": ""
+    },
+    {
+        "appid": "pokemon-lets-go",
+        "title": "Pokémon Let's Go",
+        "cover": "nintendogames/pokemonletsgo.jpg",
+        "cover_fallback": "nintendogames/pokemonletsgo.jpg",
+        "rating": 4.5,
+        "playtime_hours": 100,
+        "note": ""
+    },
+    {
+        "appid": "pokemon-scarlet",
+        "title": "Pokémon Scarlet",
+        "cover": "nintendogames/newpokemonscarlet.jpg",
+        "cover_fallback": "nintendogames/newpokemonscarlet.jpg",
+        "rating": 1.5,
+        "playtime_hours": 30,
+        "note": ""
+    },
+    {
+        "appid": "pokemon-shining-pearl",
+        "title": "Pokémon Shining Pearl",
+        "cover": "nintendogames/pokemonshingpearl.jpg",
+        "cover_fallback": "nintendogames/pokemonshingpearl.jpg",
+        "rating": 1.5,
+        "playtime_hours": 30,
+        "note": ""
+    },
+    {
+        "appid": "pokemon-sword",
+        "title": "Pokémon Sword",
+        "cover": "nintendogames/Pokemon-Sword-7111905-vertical-video-game-poster.webp",
+        "cover_fallback": "nintendogames/Pokemon-Sword-7111905-vertical-video-game-poster.webp",
+        "rating": 4,
+        "playtime_hours": 200,
+        "note": ""
+    },
+    {
+        "appid": "minecraft",
+        "title": "Minecraft",
+        "cover": "nintendogames/minecraft.png",
+        "cover_fallback": "nintendogames/minecraft.png",
+        "rating": 5,
+        "playtime_hours": 500,
+        "note": ""
+    },
+    {
+        "appid": "pikmin-3",
+        "title": "Pikmin 3",
+        "cover": "nintendogames/WiiU_Pikmin3_Boxart.webp",
+        "cover_fallback": "nintendogames/WiiU_Pikmin3_Boxart.webp",
+        "rating": 5,
+        "playtime_hours": 50,
+        "note": ""
+    },
+    {
+        "appid": "pikmin-4",
+        "title": "Pikmin 4",
+        "cover": "nintendogames/pikmin4.jpg",
+        "cover_fallback": "nintendogames/pikmin4.jpg",
+        "rating": 4,
+        "playtime_hours": 20,
+        "note": ""
+    },
+    {
+        "appid": "mario-3d-world",
+        "title": "Super Mario 3D World",
+        "cover": "nintendogames/sm3dw-cover-art-2048x2732-1.jpg",
+        "cover_fallback": "nintendogames/sm3dw-cover-art-2048x2732-1.jpg",
+        "rating": 5,
+        "playtime_hours": 200,
+        "note": ""
+    },
+    {
+        "appid": "mario-odyssey",
+        "title": "Super Mario Odyssey",
+        "cover": "nintendogames/supermariooddyssey.jpg",
+        "cover_fallback": "nintendogames/supermariooddyssey.jpg",
+        "rating": 4.5,
+        "playtime_hours": 80,
+        "note": ""
+    },
+    {
+        "appid": "smash-ultimate",
+        "title": "Super Smash Bros. Ultimate",
+        "cover": "nintendogames/supersmashbros.jpg",
+        "cover_fallback": "nintendogames/supersmashbros.jpg",
+        "rating": 4.5,
+        "playtime_hours": 465,
+        "note": ""
+    },
+    {
+        "appid": "mario-galaxy-2",
+        "title": "Super Mario Galaxy 2",
+        "cover": "nintendogames/Rumour-Super-Mario-Galaxy-2-Boxart-1-1-.webp",
+        "cover_fallback": "nintendogames/Rumour-Super-Mario-Galaxy-2-Boxart-1-1-.webp",
+        "rating": 5,
+        "playtime_hours": 200,
+        "note": ""
     }
 ]

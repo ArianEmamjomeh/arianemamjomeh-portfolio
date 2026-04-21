@@ -22,7 +22,7 @@
     }
 
     const ICONS = {
-        mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>',
+        twitter: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
         github: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.9-.39.98 0 1.98.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.15 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>',
         linkedin: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1-.01 5.01A2.5 2.5 0 0 1 4.98 3.5zM3 9h4v12H3zM9 9h3.8v1.65h.06c.53-.95 1.82-1.95 3.74-1.95 4 0 4.74 2.6 4.74 5.98V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.42-2.11 2.9V21H9z"/></svg>',
         cv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>'
@@ -35,6 +35,7 @@
             return `<a href="${n.href}" class="${active.trim()}">${n.label}</a>`;
         }).join("");
 
+        const site = "arianemamjomeh.com";
         const html = `
         <div class="topbar-inner">
             <a class="brand" href="index.html">
@@ -42,11 +43,20 @@
                 <span class="brand-name">arian emamjomeh</span>
             </a>
             <nav class="topnav">${links}</nav>
-            <div class="socials">
-                <a href="mailto:arianemamjomeh@gmail.com" aria-label="email" title="email">${ICONS.mail}</a>
-                <a href="https://github.com/arianemamjomeh" target="_blank" rel="noopener" aria-label="github" title="github">${ICONS.github}</a>
-                <a href="https://www.linkedin.com/in/arian-emamjomeh/" target="_blank" rel="noopener" aria-label="linkedin" title="linkedin">${ICONS.linkedin}</a>
-                <a href="#" aria-label="resume" title="resume">${ICONS.cv}</a>
+            <div class="topbar-right">
+                <div class="socials">
+                    <a href="https://x.com/arianemamjomeh" target="_blank" rel="noopener" aria-label="twitter" title="twitter">${ICONS.twitter}</a>
+                    <a href="https://github.com/arianemamjomeh" target="_blank" rel="noopener" aria-label="github" title="github">${ICONS.github}</a>
+                    <a href="https://www.linkedin.com/in/arian-emamjomeh/" target="_blank" rel="noopener" aria-label="linkedin" title="linkedin">${ICONS.linkedin}</a>
+                    <a href="#" aria-label="resume" title="resume">${ICONS.cv}</a>
+                </div>
+                <div class="webring-pill" title="UW CS Webring">
+                    <a href="https://cs.uwatering.com/#${site}?nav=prev" aria-label="previous site in webring">←</a>
+                    <a href="https://cs.uwatering.com/#${site}" target="_blank" rel="noopener" aria-label="UW CS Webring">
+                        <img src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring">
+                    </a>
+                    <a href="https://cs.uwatering.com/#${site}?nav=next" aria-label="next site in webring">→</a>
+                </div>
             </div>
         </div>`;
 
@@ -58,7 +68,7 @@
 
     function buildFooter() {
         const f = document.createElement("footer");
-        f.innerHTML = `arian emamjomeh <span class="dot">•</span> waterloo, on <span class="dot">•</span> ${new Date().getFullYear()}`;
+        f.innerHTML = `arian emamjomeh <span class="dot">•</span> waterloo, on <span class="dot">•</span> 2030`;
         document.body.appendChild(f);
     }
 
@@ -500,19 +510,29 @@
             }
             gamesData = allGames;
 
+            // Pinned top ordering — these appids show first in this exact order.
+            // Everything else falls through to rating desc, then playtime desc.
+            const TOP_ORDER = [
+                367520,             // Hollow Knight
+                1030300,            // Hollow Knight: Silksong
+                1687950,            // Persona 5 Royal
+                1145360,            // Hades
+                1245620,            // Elden Ring
+                "mario-galaxy-2",
+                "mario-3d-world",
+                "pikmin-3",
+                "minecraft"
+            ];
+            const topIndex = (appid) => {
+                const i = TOP_ORDER.findIndex(id => String(id) === String(appid));
+                return i === -1 ? Infinity : i;
+            };
             const sorted = [...allGames].sort((a, b) => {
+                const ai = topIndex(a.appid), bi = topIndex(b.appid);
+                if (ai !== bi) return ai - bi;
                 return (b.rating || 0) - (a.rating || 0)
                     || (b.playtime_hours || 0) - (a.playtime_hours || 0);
             });
-            // Keep Hollow Knight + Silksong adjacent, OG first
-            const HK = 367520, SILKSONG = 1030300;
-            const silksongIdx = sorted.findIndex(g => g.appid === SILKSONG);
-            if (silksongIdx !== -1) {
-                const [silksong] = sorted.splice(silksongIdx, 1);
-                const hkIdx = sorted.findIndex(g => g.appid === HK);
-                if (hkIdx !== -1) sorted.splice(hkIdx + 1, 0, silksong);
-                else sorted.unshift(silksong);
-            }
 
             function renderCard(g) {
                 const hoursOverlay = (g.playtime_hours || 0) > 0

@@ -126,7 +126,9 @@ async function main() {
             title: meta.title_override || g.name,
             cover: `https://cdn.akamai.steamstatic.com/steam/apps/${g.appid}/library_600x900.jpg`,
             cover_fallback: `https://cdn.akamai.steamstatic.com/steam/apps/${g.appid}/header.jpg`,
-            playtime_hours: Math.round((g.playtime_forever || 0) / 60),
+            playtime_hours: typeof meta.playtime_override === "number"
+                ? meta.playtime_override
+                : Math.round((g.playtime_forever || 0) / 60),
             achievements_earned: earned,
             achievements_total: total,
             completed,

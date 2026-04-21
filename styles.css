@@ -181,6 +181,42 @@ footer {
 }
 footer span.dot { color: var(--accent); }
 
+/* ===== Topbar right cluster: webring + socials ===== */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.webring-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1;
+}
+.webring-pill a {
+    color: var(--text-dim);
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+.webring-pill a:hover { color: var(--accent); }
+.webring-pill img {
+    width: 18px;
+    height: auto;
+    display: block;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.webring-pill a:hover img { opacity: 1; filter: drop-shadow(0 0 4px rgba(217, 119, 87, 0.5)); }
+
+@media (max-width: 720px) {
+    .webring-pill { font-size: 12px; gap: 6px; }
+    .webring-pill img { width: 15px; }
+    .topbar-right { gap: 10px; }
+}
+
 /* ===== highlight chips — used inline in prose/descriptions ===== */
 .chip {
     display: inline-flex;

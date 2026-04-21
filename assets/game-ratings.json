@@ -25,7 +25,7 @@
     "105600":   { "rating": 4,   "note": "" },
     "413150":   { "rating": 4,   "note": "" },
     "1145360":  { "rating": 5,   "note": "" },
-    "367520":   { "rating": 5,   "note": "" },
+    "367520":   { "rating": 5,   "note": "", "playtime_override": 400 },
     "1245620":  { "rating": 5,   "note": "" },
     "391540":   { "rating": 4.5, "note": "" }
 }
