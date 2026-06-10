@@ -295,6 +295,18 @@
         /* removed by user request */
     }
 
+    // Readable labels for MAL list statuses (anime + manga).
+    const STATUS_LABELS = {
+        watching: "watching",
+        reading: "reading",
+        completed: "completed",
+        on_hold: "on hold",
+        dropped: "dropped",
+        plan_to_watch: "plan to watch",
+        plan_to_read: "plan to read"
+    };
+    const STAR_GLYPH = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l2.9 6.6 7.1.6-5.4 4.8 1.6 7L12 17.6 5.8 21.2l1.6-7L2 9.4l7.1-.6z"/></svg>`;
+
     const STAR_PATH = "M12 2.2l2.9 6.6 7.1.6-5.4 4.8 1.6 7L12 17.6 5.8 21.2l1.6-7L2 9.4l7.1-.6z";
     function starSVG(state) {
         return `<svg class="game-star ${state}" viewBox="0 0 24 24" aria-hidden="true">
@@ -327,10 +339,13 @@
         coverImg.onerror = () => { coverImg.onerror = null; coverImg.src = g.cover_fallback; };
 
         const ratingRow = scrim.querySelector(".game-modal-stars");
-        ratingRow.innerHTML = starsHTML(g.rating || 0);
+        ratingRow.innerHTML = (g.rating || 0) > 0
+            ? starsHTML(g.rating) + (g.top ? `<span class="modal-top-badge">${STAR_GLYPH}all-time favorite</span>` : "")
+            : "";
 
         const meta = scrim.querySelector(".game-modal-meta");
         const parts = [];
+        if (STATUS_LABELS[g.status]) parts.push(STATUS_LABELS[g.status]);
         if (g.playtime_hours) parts.push(`${g.playtime_hours}h played`);
         if (g.achievements_total) parts.push(`${g.achievements_earned} / ${g.achievements_total} achievements`);
         meta.textContent = parts.join(" · ");
@@ -494,15 +509,18 @@
         const grid = document.getElementById("games-grid");
         if (!grid) return;
         try {
-            const [steamRes, manualRes] = await Promise.all([
+            const [steamRes, manualRes, animeRes] = await Promise.all([
                 fetch("assets/games.json", { cache: "no-cache" }),
-                fetch("assets/games-manual.json", { cache: "no-cache" }).catch(() => null)
+                fetch("assets/games-manual.json", { cache: "no-cache" }).catch(() => null),
+                fetch("assets/anime.json", { cache: "no-cache" }).catch(() => null)
             ]);
             const steam = await steamRes.json();
             const manual = manualRes && manualRes.ok ? await manualRes.json() : [];
+            const anime = animeRes && animeRes.ok ? await animeRes.json() : [];
             const allGames = [
                 ...(Array.isArray(steam) ? steam : []),
-                ...(Array.isArray(manual) ? manual : [])
+                ...(Array.isArray(manual) ? manual : []),
+                ...(Array.isArray(anime) ? anime : [])
             ];
             if (allGames.length === 0) {
                 grid.innerHTML = `<div class="games-empty">no games yet. run <code>node scripts/fetch-steam.js</code> to populate.</div>`;
@@ -521,7 +539,22 @@
                 "mario-galaxy-2",
                 "mario-3d-world",
                 "pikmin-3",
-                "minecraft"
+                "minecraft",
+                // anime 10/10 — pinned order (only show in the anime tab)
+                "mal-anime-57555",  // Chainsaw Man Movie: Reze-hen
+                "mal-anime-31933",  // JoJo Part 4: Diamond is Unbreakable
+                "mal-anime-37991",  // JoJo Part 5: Golden Wind
+                "mal-anime-61469",  // JoJo: Steel Ball Run
+                "mal-anime-39587",  // Re:Zero 2nd Season
+                "mal-anime-42203",  // Re:Zero 2nd Season Part 2
+                "mal-anime-61316",  // Re:Zero 4th Season
+                "mal-anime-21",     // One Piece
+                // manga 10/10 — pinned order (only show in the manga tab)
+                "mal-manga-116778", // Chainsaw Man
+                "mal-manga-1706",   // JoJo Part 7: Steel Ball Run
+                "mal-manga-74697",  // Re:Zero
+                "mal-manga-143441", // Omniscient Reader's Viewpoint
+                "mal-manga-13"      // One Piece
             ];
             const topIndex = (appid) => {
                 const i = TOP_ORDER.findIndex(id => String(id) === String(appid));
@@ -558,6 +591,18 @@
                     ? `<div class="cover-bg" style="background-image: url('${coverSafe}');"></div>`
                     : "";
                 const cat = g.category || "all";
+                // 10/10 favorites get a gold badge on the cover.
+                const topBadge = g.top
+                    ? `<div class="cover-overlay cover-top" title="all-time favorite">${STAR_GLYPH}<span>10</span></div>`
+                    : "";
+                // Status pill (anime/manga only): completed, watching, dropped, plan to watch, …
+                const statusTag = STATUS_LABELS[g.status]
+                    ? `<div class="status-tag" data-status="${g.status}">${STATUS_LABELS[g.status]}</div>`
+                    : "";
+                // Hide stars entirely when unrated so it doesn't read as a 0-star rating.
+                const starsRow = (g.rating || 0) > 0
+                    ? `<div class="game-stars">${starsHTML(g.rating)}</div>`
+                    : "";
                 return `
                 <div class="game-card" data-appid="${g.appid}" data-category="${cat}">
                     <div class="game-cover">
@@ -568,12 +613,14 @@
                                  onerror="this.onerror=null;this.src='${g.cover_fallback}';">
                             ${hoursOverlay}
                             ${coverInside}
+                            ${topBadge}
                         </div>
                     </div>
                     ${belowCover}
                     <div class="game-meta">
                         <div class="game-title">${g.title}</div>
-                        <div class="game-stars">${starsHTML(g.rating || 0)}</div>
+                        ${statusTag}
+                        ${starsRow}
                     </div>
                 </div>`;
             }
