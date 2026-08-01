@@ -39,7 +39,6 @@
         const html = `
         <div class="topbar-inner">
             <a class="brand" href="index.html">
-                <span class="brand-dot"></span>
                 <span class="brand-name">arian emamjomeh</span>
             </a>
             <nav class="topnav">${links}</nav>
@@ -48,7 +47,7 @@
                     <a href="https://x.com/arianemamjomeh" target="_blank" rel="noopener" aria-label="twitter" title="twitter">${ICONS.twitter}</a>
                     <a href="https://github.com/arianemamjomeh" target="_blank" rel="noopener" aria-label="github" title="github">${ICONS.github}</a>
                     <a href="https://www.linkedin.com/in/arian-emamjomeh/" target="_blank" rel="noopener" aria-label="linkedin" title="linkedin">${ICONS.linkedin}</a>
-                    <a href="#" aria-label="resume" title="resume">${ICONS.cv}</a>
+                    <a href="ARIAN_VL_RESUME.pdf" target="_blank" rel="noopener" aria-label="resume" title="resume">${ICONS.cv}</a>
                 </div>
                 <div class="webring-pill" title="UW CS Webring">
                     <a href="https://cs.uwatering.com/#${site}?nav=prev" aria-label="previous site in webring">←</a>

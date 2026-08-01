@@ -19,17 +19,36 @@
 
         <div class="timeline">
             <div class="tl-item reveal">
-                <div class="tl-date">feb '26 — now</div>
+                <div class="tl-date">summer '27</div>
+                <div class="tl-body">
+                    <h3>incoming software engineering intern</h3>
+                    <div class="tl-sub">volvo energy · gothenburg, sweden</div>
+                    <p class="tl-desc">
+                        joining the <span class="chip">bess</span> (battery energy storage systems) product development
+                        team as a software engineering intern.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tl-item reveal">
+                <div class="tl-date">jan '26 — aug '26</div>
                 <div class="tl-body">
                     <h3>software engineering intern</h3>
                     <div class="tl-sub">inductive solution · boston, ma</div>
                     <p class="tl-desc">
-                        leading end-to-end development of a production-style agent platform — message ingestion,
-                        orchestration, persistence, observability, and background task automation.
-                        spearheading <span class="chip">aura</span>, a conversational ai backend that processes requests
-                        over redis pub/sub, orchestrates multi-turn conversations, and integrates built-in tools via
-                        native llm function calling. implemented per-user sqlite storage for notes, reminders, preferences,
-                        conversation search, and memory.
+                        built <span class="chip">aura</span>, a conversational ai assistant serving consumers and
+                        businesses across web, mobile, sms, and email. developed the python llm backend orchestrating
+                        multi-turn conversations and <span class="chip purple">35+ function-calling tools</span>
+                        (email, calendar, crm, bookkeeping) over per-user encrypted sqlite storage that isolates each
+                        customer's data. hardened the runtime for production with atomic message deduplication across
+                        redis reconnects and failover across <span class="chip blue">4 llm providers</span> with
+                        per-provider cooldowns, eliminating duplicate replies and mid-deploy conversation drops.
+                        engineered an autonomous coordination engine that books property showings end-to-end across
+                        4 contact channels (showingtime, whatsapp, sms, email), parsing agent replies, auto-renegotiating
+                        scheduling conflicts by priority, and writing confirmed times to calendar. shipped an llm-driven
+                        browser agent executing real mls/showingtime bookings through a sandboxed playwright worker with
+                        human-approved, idempotent writes — cutting the live mls read failure rate from
+                        <span class="chip green">~33% to 0%</span>.
                     </p>
                 </div>
             </div>
@@ -52,7 +71,7 @@
             </div>
 
             <div class="tl-item reveal">
-                <div class="tl-date">sep '25 — apr '30</div>
+                <div class="tl-date">sep '25 — apr '29</div>
                 <div class="tl-body">
                     <h3>b.cs, university of waterloo</h3>
                     <div class="tl-sub">president's distinction &amp; paul m. koch scholarship · 3.88 gpa</div>

@@ -28,7 +28,7 @@ cd arianemamjomeh-portfolio
 - `styles.css` – Centralized typography, layout, responsive rules, and animation keyframes.
 - `script.js` – UI behaviours including navigation toggles, smooth scrolling, notifications, and scroll-to-top logic.
 - `logo.png`, `profile.jpg`, `waterloo-logo.png` – Brand imagery referenced throughout the page.
-- `Arian Emamjomeh Resume.docx.pdf` – Downloadable résumé surfaced from the hero section.
+- `ARIAN_VL_RESUME.pdf` – Downloadable résumé, linked from the resume icon in the topbar.
 
 ## Customization Tips
 - Update copy directly in `index.html`; maintain heading hierarchy for accessibility.
