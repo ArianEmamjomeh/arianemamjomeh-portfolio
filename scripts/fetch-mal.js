@@ -90,7 +90,7 @@ function mapEntry(item, category, overrides) {
         cover_fallback: (node.main_picture && node.main_picture.medium) || "",
         category,                       // "anime" | "manga"
         rating,                         // 0 means unrated -> no stars shown
-        top: ls.score === 10,           // 10/10 favorites get a special indicator
+        top: typeof o.top === "boolean" ? o.top : ls.score === 10, // 10/10 favorites get a special indicator
         status: ls.status,              // watching/completed/dropped/plan_to_watch/...
         note: o.note || null,
         _sort: STATUS_ORDER[ls.status] != null ? STATUS_ORDER[ls.status] : 9

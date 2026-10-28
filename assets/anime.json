@@ -698,8 +698,8 @@
     "cover": "https://cdn.myanimelist.net/images/anime/1522/128039l.jpg",
     "cover_fallback": "https://cdn.myanimelist.net/images/anime/1522/128039.jpg",
     "category": "anime",
-    "rating": 4,
-    "top": false,
+    "rating": 5,
+    "top": true,
     "status": "completed",
     "note": null
   },

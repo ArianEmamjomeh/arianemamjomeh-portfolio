@@ -540,18 +540,19 @@
                 "pikmin-3",
                 "minecraft",
                 // anime 10/10 — pinned order (only show in the anime tab)
+                "mal-anime-61316",  // Re:Zero 4th Season
+                "mal-anime-42203",  // Re:Zero 2nd Season Part 2
+                "mal-anime-39587",  // Re:Zero 2nd Season
+                "mal-anime-31240",  // Re:Zero (season 1)
                 "mal-anime-57555",  // Chainsaw Man Movie: Reze-hen
                 "mal-anime-31933",  // JoJo Part 4: Diamond is Unbreakable
                 "mal-anime-37991",  // JoJo Part 5: Golden Wind
                 "mal-anime-61469",  // JoJo: Steel Ball Run
-                "mal-anime-39587",  // Re:Zero 2nd Season
-                "mal-anime-42203",  // Re:Zero 2nd Season Part 2
-                "mal-anime-61316",  // Re:Zero 4th Season
                 "mal-anime-21",     // One Piece
                 // manga 10/10 — pinned order (only show in the manga tab)
+                "mal-manga-74697",  // Re:Zero
                 "mal-manga-116778", // Chainsaw Man
                 "mal-manga-1706",   // JoJo Part 7: Steel Ball Run
-                "mal-manga-74697",  // Re:Zero
                 "mal-manga-143441", // Omniscient Reader's Viewpoint
                 "mal-manga-13"      // One Piece
             ];
