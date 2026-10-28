@@ -80,6 +80,7 @@ function mapEntry(item, category, overrides) {
     const ls = item.list_status || {};
     const id = `${category}-${node.id}`;
     const o = overrides[id] || {};
+    if (o.status) ls.status = o.status;
     // MAL personal score is 0–10; the site renders 0–5 stars (10/10 == 5 stars).
     const malStars = ls.score ? ls.score / 2 : 0;
     const rating = typeof o.rating === "number" ? o.rating : malStars;
